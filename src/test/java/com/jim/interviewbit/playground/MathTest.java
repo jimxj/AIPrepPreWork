@@ -1,4 +1,4 @@
-package com.jim.interviewbit;
+package com.jim.interviewbit.playground;
 
 import org.junit.Test;
 

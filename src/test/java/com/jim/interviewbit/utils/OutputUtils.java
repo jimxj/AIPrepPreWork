@@ -3,10 +3,11 @@ package com.jim.interviewbit.utils;
 import com.jim.interviewbit.common.ListNode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OutputUtils {
 
-    public static <T> void printArrayList(ArrayList<T> list) {
+    public static <T> void printArrayList(List<T> list) {
         for (T row : list) {
             System.out.println(row);
         }

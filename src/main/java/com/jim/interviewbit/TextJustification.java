@@ -76,20 +76,36 @@ class TextJustification {
 
         int avgSpace = 1;    //2
         int firstPadding = 0;   //0
+        int lastPadding = 0;   //0
 
-        if (extraSpaces > 0 && wordsCount > 1) {
-            avgSpace = 1 + extraSpaces / (wordsCount - 1);    //2
-            firstPadding = extraSpaces % (wordsCount - 1);   //0
-        } else if (wordsCount == 1) {
-            firstPadding = extraSpaces;
+        if (end != words.length - 1) {
+            if (extraSpaces > 0 && wordsCount > 1) {
+                avgSpace = 1 + extraSpaces / (wordsCount - 1);    //2
+                firstPadding = extraSpaces % (wordsCount - 1);   //0
+            } else if (wordsCount == 1) {
+                firstPadding = extraSpaces;
+            }
+        } else {
+            lastPadding = extraSpaces;
         }
 
         StringBuilder sb = new StringBuilder();
         for (int i = start; i <= end; i++) {
             sb.append(words[i]);
+
             if (i == start) {
                 addSpaces(sb, avgSpace + firstPadding);
             } else if (i != end) {
+                addSpaces(sb, avgSpace);
+            }
+
+            if (i == words.length - 1)  {
+                addSpaces(sb, lastPadding);
+            } else if (i == start && wordsCount == 1) {
+                addSpaces(sb, avgSpace + firstPadding);
+            } else if (i < (start + firstPadding)) {
+                addSpaces(sb, avgSpace + 1);
+            } else {
                 addSpaces(sb, avgSpace);
             }
         }

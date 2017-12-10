@@ -16,6 +16,12 @@ public class MathTest {
         System.out.println(floorValue);
     }
 
+    @Test
+    public void fractionTest() {
+        System.out.println(-2147483648 / -1);
+        System.out.println(-5 % -3);
+    }
+
     private static int calculateStairRows(long value) {
         //int result = 0;
         //int levelCapacity = 1;

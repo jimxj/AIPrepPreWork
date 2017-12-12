@@ -52,4 +52,16 @@ public class MathTest {
 
         return 0;
     }
+
+    @Test
+    public void testLong() {
+        long l1 = 500000;
+        System.out.println(l1 * l1);
+    }
+
+    @Test
+    public void testLong2() {
+        int l1 = 500000;
+        System.out.println(l1 * l1);
+    }
 }

@@ -64,4 +64,14 @@ public class MathTest {
         int l1 = 500000;
         System.out.println(l1 * l1);
     }
+
+    @Test
+    public void testInt() {
+        int i1 = -2147483648;
+        System.out.println(Math.abs(i1));
+        long l1 = i1;
+        long longA = Math.abs(l1);
+        //long longA = i1 >= 0 ? i1 : (long) (0 - i1); //Math.abs(a);
+        System.out.println(longA);
+    }
 }
